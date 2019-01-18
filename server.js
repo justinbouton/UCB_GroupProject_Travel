@@ -40,7 +40,13 @@ app.use(
 app.get("/", function(req, res) {
     res.render("login")
 })
+app.get("/login", function(req, res) {
+    res.render("login")
+})
 
+app.get("/registration", function(req, res) {
+    res.render("registration")
+})
 // app.use("/", login)
 // app.use("/", registration)
 // app.use("/", users)
