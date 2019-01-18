@@ -1,57 +1,45 @@
 const express = require("express")
+const app = express()
 const bodyParser = require("body-parser")
-const cookieParser = require("cookie-parser")
-const mysql = require("mysql")
-const path = require("path")
 const exphbs = require("express-handlebars")
 const session = require("express-session")
 const passport = require("passport")
-const LocalStrategy = require("passport-local").Strategy
-
-const app = express()
-
-// Users routes
-const login = require("./routes/login.js")
-const registration = require("./routes/registration.js")
-const logout = require("./routes/logout.js")
-const users = require("./routes/users.js")
-
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("./public"))
+const env = require("dotenv").load()
 
 // For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Set Handlebars.
+// For Passport & Express Session
+app.use(session({ secret: 'secret',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// For Handlebars
+app.use(express.static("./public"))
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.get("/", function(req, res) {
+    res.render("index");
+})
 
-// Express session
-app.use(
-    session({
-      secret: 'secret',
-      resave: true,
-      saveUninitialized: true
-    })
-);
+//Models
+const models = require("./models")
 
 // Routes
-app.get("/", function(req, res) {
-    res.render("login")
-})
-app.get("/login", function(req, res) {
-    res.render("login")
-})
+const authRoute = require("./routes/auth.js")(app,passport);
 
-app.get("/registration", function(req, res) {
-    res.render("registration")
-})
-// app.use("/", login)
-// app.use("/", registration)
-// app.use("/", users)
-// app.use("/", logout)
+// //load passport strategies
+require('./app/config/passport/passport.js')(passport, models.user);
 
+//Sync Database
+models.sequelize.sync().then(function() {
+    console.log('Nice! Database looks fine')
+}).catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!")
+});
+
+//make app listen on port
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function(err) {
