@@ -27,10 +27,10 @@ app.get("/", function(req, res) {
 const models = require("./models")
 
 // Routes
-const authRoute = require("./routes/auth.js")(app,passport);
+const authRoute = require("./routes/auth.js")(app, passport);
 
-// //load passport strategies
-require('./app/config/passport/passport.js')(passport, models.user);
+//load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
 //Sync Database
 models.sequelize.sync().then(function() {

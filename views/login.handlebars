@@ -1,16 +1,16 @@
 <div id="bg-container">
     <div class="form-container">
         <div class="form">
-            <form action="" id="login-form">
+            <form action="login" id="login" name="login" method="post" action="/login">
                 <fieldset>
                     <legend class="login-head">Login</legend>
                     <p class="login-content">If you have an account with us, please login.</p>
 
-                    {{!-- username --}}
+                    {{!-- email --}}
                     <div class="border-bottom">
-                        <label for="user" class="login-user">Username</label>
+                        <label for="user" class="login-user">Email</label>
                         <span class="login-icon"><i class="fas fa-user"></i></span>
-						<input type="text" id="user" name="user" placeholder="Type your username" size="20" class="input">
+						<input type="email" id="email" name="email" placeholder="Enter your Email address" size="20" class="input">
                     </div>
 
                     {{!-- password --}}
@@ -30,7 +30,7 @@
                 </fieldset>
 
                 <p class="login-content2">Are you new to Triplan?
-                    <a href="/registration">Register here</a>
+                    <a href="/register">Register here</a>
                 </p>
             </form>
         </div>
