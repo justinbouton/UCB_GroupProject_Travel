@@ -19,8 +19,8 @@ module.exports = function(app, passport) {
     app.get('/dashboard', isLoggedIn, authController.getTrips);
     app.post('/dashboard/createtrip', isLoggedIn, authController.createtrip);
 
-    app.put('/update/:id', isLoggedIn, authController.update);
-    app.delete('/dashboard/delete/:id', isLoggedIn, authController.delete);
+    app.post('/dashboard/update/:id', isLoggedIn, authController.update);
+    app.post('/dashboard/delete/:id', isLoggedIn, authController.delete);
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) return next();

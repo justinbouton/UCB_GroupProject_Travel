@@ -66,20 +66,20 @@ controller.update = function(req, res) {
             isPrevious: req.body.isPrevious
         }, 
         {
-            Where: {
+            where: {
                 trip_id: req.params.id 
             }
         }
     ).then(function(result) {
-
+        console.log(result)
         res.redirect('/dashboard')
     })
 }
 
 controller.delete = function(req, res) {
-    Trip.destory(
+    Trip.destroy(
         {
-            Where: {
+            where: {
                 trip_id: req.params.id
             }
         }
