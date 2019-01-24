@@ -17,10 +17,10 @@ module.exports = function(app, passport) {
     }));
 
     app.get('/dashboard', isLoggedIn, authController.getTrips);
-    app.post('/createtrip', isLoggedIn, authController.createtrip);
+    app.post('/dashboard/createtrip', isLoggedIn, authController.createtrip);
 
     app.put('/update/:id', isLoggedIn, authController.update);
-    app.delete('/delete/:id', isLoggedIn, authController.delete);
+    app.delete('/dashboard/delete/:id', isLoggedIn, authController.delete);
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) return next();

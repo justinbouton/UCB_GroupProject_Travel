@@ -15,12 +15,12 @@ controller.createtrip = function(req, res) {
         user_id: req.session.passport.user, // catch error later
         trip_name: req.body.trip_name,
         departDate: req.body.departDate,
-        returnDate: req.body.eturnDate,
+        returnDate: req.body.returnDate,
         locations: req.body.locations,
         activities: req.body.activities,
         isPrevious: req.body.isPrevious
     };
-    //Create Trip
+
     Trip.create(data).then(function (newTrip, created) {
         if (!newTrip) {
             return false
@@ -33,11 +33,10 @@ controller.createtrip = function(req, res) {
 }
 
 controller.getTrips = function(req, res, done) {
-   //Create Trip
    Trip.findAll(
        {
            where: {
-               user_id: req.session.passport.user, // catch error later
+               user_id: req.session.passport.user // catch error later
            }
        }
    ).then(function (trips) {
@@ -45,7 +44,17 @@ controller.getTrips = function(req, res, done) {
            return done(null, false);
        }
        if (trips) {
-           res.render('dashboard')
+           res.render('dashboard', {
+                trip_id: req.session.trip_id,
+                trip_name: req.session.trip_name,
+                departDate: req.session.departDate,
+                returnDate: req.session.returnDate,
+                locations: req.session.locations,
+                activities: req.session.activities,
+                isPrevious: req.session.isPrevious,
+                trips: trips
+           })
+
            return
        }
    });
@@ -54,7 +63,7 @@ controller.getTrips = function(req, res, done) {
 controller.update = function(req, res) {
     Trip.update(
         {
-            itinerary: req.body.itinerary
+            isPrevious: req.body.isPrevious
         }, 
         {
             Where: {
@@ -62,6 +71,7 @@ controller.update = function(req, res) {
             }
         }
     ).then(function(result) {
+
         res.redirect('/dashboard')
     })
 }
