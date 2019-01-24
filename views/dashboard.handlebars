@@ -1,4 +1,75 @@
+<header>
+    <div class="nav-container">
+        <nav>
+            <div class="logo-container">
+                <img src="/assets/imgs/logo-h.png" alt="logo" class="index-logo">
+            </div>
+            <ul class="nav-bar flex">
+                <li class="nav-list"><a href="/">Home</a></li>
+                <li class="nav-list last-nav"><a href="/logout">Logout</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </nav>
+    </div>
+</header>
 
-    <h2>Dashboard</h2>
-    <h5>Hurray! you are logged in.</h5>
-
+<div id="dashboard-container">
+    <section class="dashboard-left-side">
+        <h2 class="dashboard-head">Previous Trips</h2>
+        {{!-- Previous trips --}}
+        <ul id="itineraryList">
+            {{#each trips}}
+            {{#if this.isPrevious}}
+            <li>
+                Trip: {{this.trip_name}} <br>
+                Depart date: {{this.departDate}} <br>
+                Return date: {{this.returnDate}} <br>
+                Locations: {{this.locations}} <br>
+                Activities: {{this.activities}} <br>
+                {{!-- NEED TO UPDATE ACTION --}}
+                <form action="dashboard/delete/{{this.trip_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="itinerary" value="true">
+                    <button type="submit" class="submit">Delete the itinerary</button>
+                </form>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </section>
+    <section class="dashboard-right-side">
+        <h2 class="dashboard-head">New Trip</h2>
+        <p class="dashboard-content">Tell us about your trip</p>
+        <form id="add-trip" method="post" action="/dashboard/createtrip">
+            <fieldset>
+                <input type="text" id="trip_name" name="trip_name" placeholder="Trip name">
+                <br><br>
+                <input type="date" id="departDate" name="departDate">
+                <input type="date" id="returnDate" name="returnDate">
+                <br><br>
+                <textarea type="text" name="locations" rows="4" cols="50" placeholder="List cities here! &#10; First city &#10; Second &#10; Third..."></textarea>
+                <textarea type="text" name="activities" rows="4" cols="50" placeholder="List activities here! &#10; First activity &#10; Second &#10; Third..."></textarea>
+                <br><br>
+                <button class="" name="submitted" type="submit">Submit</button>
+            </fieldset>
+        </form>
+        {{!-- Show active trip --}}
+        <ul>
+            {{#each trips}}
+                {{#unless this.isPrevious}}
+                    <li>
+                        Trip: {{this.trip_name}} <br>
+                        Depart date: {{this.departDate}} <br>
+                        Return date: {{this.returnDate}} <br>
+                        Locations: {{this.locations}} <br>
+                        Activities: {{this.activities}} <br>
+                        {{!-- Archive old trip. NEED TO UPDATE ACTION --}}
+                        <form action="/dashboard/update/{{this.trip_id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="isPrevious" value="true">
+                            <button type="submit" class="submit">Add to Previous trip</button>
+                        </form>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </section>
+</div>

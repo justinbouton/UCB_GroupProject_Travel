@@ -483,3 +483,346 @@
         font-size: 10px;
     }
 }
+
+/* ======= index page ======= */
+.nav-container {
+    margin: 20px;
+}
+
+.index-logo {
+    height: 60px;
+}
+
+.logo-container {
+    float: left;
+    margin-left: 200px;
+}
+
+.nav-bar {
+    float: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.nav-list {
+    margin-top: 25px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+.last-nav {
+    margin-right: 100px;
+}
+
+.large-header {
+    background-image: url(../imgs/banner.jpg);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    height: 500px;
+}
+
+.inner-content {
+    padding: 2em 0;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 95%;
+}
+
+h3.tittle, h2.tittle.find {
+    margin-bottom: 1em;
+}
+
+h3.tittle, h2.tittle {
+    color: #333;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h3.tittle, h2.tittle.team {
+    margin-bottom: 0.4em;
+}
+
+.top_section {
+    background: #33cccc;
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.bnr-btm-left {
+    float: left;
+    width: 37%;
+    position: absolute;
+    top: 14%;
+    left: -2%;
+}
+
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 401px;
+    max-height: 321px;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+figure.effect-ming img {
+    opacity: 0.9;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+}
+
+.bnr-btm-left img {
+    width: 100%;
+}
+
+.bnr-btm-right {
+    float: right;
+    width: 62%;
+    padding: 8em 8em 8em 8em;
+    background: #F3F1F1;
+    border: 1px solid #E6E3E3;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.bnr-btm-right h3, .banner-about h3 {
+    color: #444;
+    font-size: 3em;
+    margin-bottom: 0.7em;
+}
+
+.bnr-btm-right p {
+    color: #777;
+}
+
+.bnr-btm-right.two {
+    float: left;
+    width: 62%;
+    padding: 8em 8em 8em 8em;
+    background: #F3F1F1;
+    border: 1px solid #E6E3E3;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.bnr-btm-left.two {
+    float: right;
+    width: 40%;
+    position: absolute;
+    top: 7%;
+    right: -72%;
+}
+
+.grid {
+    margin: 0 auto;
+}
+
+.staff {
+    background: #f4f4f4;
+    padding: 2em 0;
+    margin-bottom: 7em;
+}
+
+.team {
+    margin-top: 5em;
+}
+
+.staff2 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.view {
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+}
+
+.view-fifth img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+}
+
+.staff2 img {
+    margin: 0 auto;
+}
+
+.view-fifth .mask {
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    transform: translateX(-300px);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+}
+
+.view .mask, .view .content {
+    position: absolute;
+    overflow: hidden;
+    top: 92px;
+    left: 0;
+}
+
+.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 16px;
+    background: #3EAABF;
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+}
+
+.info i {
+    font-size: 1.5em;
+}
+
+.glyphicon {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pop_up2 {
+    text-align: center;
+}
+
+p.popup_desc {
+    margin-top: 10px;
+}
+
+.staff2 p {
+    color: #777;
+    font-weight: 500;
+    text-align: center;
+    margin: 8px 0;
+    line-height: 1.9em;
+    padding: 0 16px;
+}
+
+ul.s_social {
+    padding: 0;
+    list-style: none;
+    text-align: Center;
+}
+
+ul.s_social li {
+    display: inline-block;
+}
+
+ul.s_social li a i.fb1 {
+    background-position: -7px -7px;
+}
+
+ul.s_social li a i.tw1 {
+    background-position: -32px -7px;
+}
+
+ul.s_social li a i.linked1 {
+    background-position: -66px -7px;
+}
+
+ul.s_social li a i.google1 {
+    background-position: -96px -7px;
+}
+
+ul.s_social li a i {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../imgs/img-sprite.png)no-repeat;
+}
+
+@media screen and (max-width: 1100px){
+    .logo-container {
+        margin-left: 0;
+    }
+}
+
+/* ======= dashboard page ======= */
+#dashboard-container {
+    display: flex;
+}
+.dashboard-left-side {
+    width: 50%;
+    position: relative;
+    height: 100vh;
+}
+.dashboard-right-side {
+    width: 50%;
+    position: relative;
+    height: 100vh;
+    background: #fff;
+}
+.dashboard-head {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.dashboard-content {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 20px;
+}

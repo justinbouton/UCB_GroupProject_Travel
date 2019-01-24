@@ -13,10 +13,32 @@ module.exports = function(sequelize, Sequelize) {
         },
         
         trip_name: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING
+        },
+
+        departDate: {
+            type: Sequelize.DATE
+        },
+
+        returnDate: {
+            type: Sequelize.DATE
+        },
+
+        locations: {
+            type: Sequelize.TEXT
+        },
+
+        activities: {
+            type: Sequelize.TEXT
+        },
+
+        isPrevious: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: false,
+            type: Sequelize.STRING
         }
     });
  
     return Trip;
- 
+
 }
