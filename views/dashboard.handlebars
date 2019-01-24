@@ -27,7 +27,7 @@
                 Locations: {{this.locations}} <br>
                 Activities: {{this.activities}} <br>
                 {{!-- NEED TO UPDATE ACTION --}}
-                <form action="dashboard/delete/{{this.trip_id}}" method="POST">
+                <form action="dashboard/delete/{{this.trip_id}}?_method=DELETE" method="POST">
                     <button type="submit" class="submit">Delete the itinerary</button>
                 </form>
             </li>
