@@ -1,6 +1,6 @@
 // $(function() {
 //     $(".update").on("click", function(event) {
-//         let id = $(this).data("trip_id");
+//         let id = $(this).data("id");
 //         let changedPrevious = {
 //             isPrevious: true
 //             };

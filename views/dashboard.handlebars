@@ -28,7 +28,6 @@
                 Activities: {{this.activities}} <br>
                 {{!-- NEED TO UPDATE ACTION --}}
                 <form action="dashboard/delete/{{this.trip_id}}?_method=DELETE" method="POST">
-                    <input type="hidden" name="itinerary" value="true">
                     <button type="submit" class="submit">Delete the itinerary</button>
                 </form>
             </li>
@@ -63,7 +62,10 @@
                         Locations: {{this.locations}} <br>
                         Activities: {{this.activities}} <br>
                         {{!-- Archive old trip. NEED TO UPDATE ACTION --}}
-                        <form action="/dashboard/update/{{this.trip_id}}?_method=PUT" method="POST">
+                        {{!-- <button class="submit update" data-id="{{this.trip_id}}">Add to Previous trip</button> --}}
+
+
+                        <form action="/dashboard/update/{{this.trip_id}}" method="POST">
                             <input type="hidden" name="isPrevious" value="true">
                             <button type="submit" class="submit">Add to Previous trip</button>
                         </form>

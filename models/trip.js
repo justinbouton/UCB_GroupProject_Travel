@@ -34,11 +34,9 @@ module.exports = function(sequelize, Sequelize) {
 
         isPrevious: {
             type: Sequelize.BOOLEAN,
-            defaultValue: false,
-            type: Sequelize.STRING
+            defaultValue: false
         }
     });
  
     return Trip;
-
 }
