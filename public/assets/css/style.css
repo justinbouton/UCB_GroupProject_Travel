@@ -799,30 +799,257 @@ ul.s_social li a i {
 }
 
 /* ======= dashboard page ======= */
+
 #dashboard-container {
     display: flex;
 }
+
 .dashboard-left-side {
     width: 50%;
     position: relative;
     height: 100vh;
+    border-right: 1px solid #333;
+    padding: 20px;
+    background: 
+        linear-gradient(
+        rgba(255, 255, 255, 0.45), 
+        rgba(255, 255, 255, 0.45)
+      ),
+      url(../imgs/dashboard.jpeg);
+    background-size: cover;
+    background-position: center center;
 }
+
 .dashboard-right-side {
+    padding: 20px;
     width: 50%;
     position: relative;
     height: 100vh;
     background: #fff;
+    border-left: 1px solid #333;
 }
+
 .dashboard-head {
     text-align: center;
     font-size: 60px;
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 20px; 
 }
+
+.dashboard-input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 1em;
+    max-width: 350px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+}
+
+.dashboard-input-hoshi {
+    overflow: hidden;
+    max-width: none;
+    width: 85%;
+    height: 80px;
+}
+
+.dashboard-input-hoshi-half-left {
+    padding-right: 30px;
+    overflow: hidden;
+    max-width: none;
+    width: 40%;
+    height: 80px;
+}
+
+.dashboard-input-hoshi-half-right {
+    padding-left: 30px;
+    overflow: hidden;
+    max-width: none;
+    width: 40%;
+    height: 80px;
+}
+
+.dashboard-input-label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dashboard-input-label-hoshi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(100% - 1em);
+    text-align: left;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.12em;
+}
+
+.dashboard-input-label-hoshi::before,
+.dashboard-input-label-hoshi::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 10px);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dashboard-input-label-hoshi::after {
+    margin-top: 1.5px;
+    border-bottom: 2px solid #33cccc;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.dashboard-form {
+    text-align: center;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.overflow {
+    overflow: visible
+}
+
+.textarea-title {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.12em;
+    font-weight: bold;
+}
+
+.previous {
+    border-bottom: 1px solid #333;
+}
+
 .dashboard-content {
     text-align: center;
     font-size: 18px;
     font-family: 'Dosis', sans-serif;
     margin-bottom: 20px;
+}
+
+.trip-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #33cccc;
+}
+
+#itineraryList {
+    margin-left: 8%;
+}
+
+.result-list {
+    list-style: none;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.delete {
+    margin-top: 10px;
+}
+
+.submit,
+.submit::after {
+    -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.submit {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #333;
+    display: block;
+    font-size: 15px;
+    padding: 2px 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit::before,
+.submit::after {
+    background: #33cccc;
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+.submit:hover {
+    color: #fff;
+    background: #33cccc;
+    border: 1px solid #33cccc;
+}
+
+.submit::after {
+    height: 100%;
+    left: -35%;
+    top: 0;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width: 0;
+}
+
+.submit:hover:after {
+    height: 100%;
+    width: 135%;
+}
+
+.create {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dotted #333;
+}
+
+.submit-button {
+    background-color: #33cccc;
+    border: 1px solid #33cccc;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    padding: 2px 6px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 1em;
+    height: 100%;
+}
+
+.submit-button:hover {
+    color: #333;
+    background: #fff;
+    border: 1px solid #333;
 }
