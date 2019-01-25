@@ -1,7 +1,24 @@
 {
+ 
     "development": { 
+        "username": "root",
+        "password": "password", 
+        "database": "triplan_db",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+ 
+    "test": {
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "",
+        "dialect": "mysql"
+    },
+
+    "production": {
         "use_env_varible": "JAWSDB_URL",
         "dialect": "mysql"
-    }
+}
  
 }
