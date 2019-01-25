@@ -1,8 +1,8 @@
 {
   "name": "UCB_GroupProject_Travel",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "-Node \r -Express \r -MySql \r -Handlebars",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
