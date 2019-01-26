@@ -5,9 +5,18 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const env = process.env.NODE_ENV || "development";
 const config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+// const sequelize = new Sequelize(config.database, config.username, config.password, config);
+const sequelize = '';
 const db = {};
 
+if (process.env.DATABASE_URL) {
+    sequelize = new Sequelize(database)
+}
+else {
+    sequelize = new Sequelize(database, 'postgres', '', {
+        dialect: 'postgres'
+    });
+}
 
 fs
     .readdirSync(__dirname)
