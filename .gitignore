@@ -63,4 +63,5 @@ typings/
 #confidential file
 # config/config.json
 
+#Mac file
 .DS_Store
