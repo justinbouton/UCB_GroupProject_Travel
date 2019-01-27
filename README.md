@@ -1,6 +1,6 @@
 # UCB_GroupProject_Travel
 
-Triplan is desgined to simplify group travel.
+[Triplan is desgined to simplify group travel][https://ucbgroupprojecttravel.herokuapp.com/]
 
 
 ## TECHNOLOGIES:
